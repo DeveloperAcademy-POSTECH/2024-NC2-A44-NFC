@@ -15,6 +15,7 @@
 		840E4B342C208C6200B06B20 /* ReporToiletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B332C208C6200B06B20 /* ReporToiletTests.swift */; };
 		840E4B3E2C208C6200B06B20 /* ReporToiletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B3D2C208C6200B06B20 /* ReporToiletUITests.swift */; };
 		840E4B402C208C6200B06B20 /* ReporToiletUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B3F2C208C6200B06B20 /* ReporToiletUITestsLaunchTests.swift */; };
+		840E4B4D2C20A20500B06B20 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B4C2C20A20500B06B20 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		840E4B392C208C6200B06B20 /* ReporToiletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReporToiletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		840E4B3D2C208C6200B06B20 /* ReporToiletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReporToiletUITests.swift; sourceTree = "<group>"; };
 		840E4B3F2C208C6200B06B20 /* ReporToiletUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReporToiletUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		840E4B4C2C20A20500B06B20 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				840E4B242C208C6000B06B20 /* Item.swift */,
 				840E4B262C208C6200B06B20 /* Assets.xcassets */,
 				840E4B282C208C6200B06B20 /* Preview Content */,
+				840E4B4C2C20A20500B06B20 /* MainView.swift */,
 			);
 			path = ReporToilet;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				840E4B232C208C6000B06B20 /* ContentView.swift in Sources */,
+				840E4B4D2C20A20500B06B20 /* MainView.swift in Sources */,
 				840E4B252C208C6000B06B20 /* Item.swift in Sources */,
 				840E4B212C208C6000B06B20 /* ReporToiletApp.swift in Sources */,
 			);
