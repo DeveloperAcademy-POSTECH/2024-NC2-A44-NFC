@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct ReporToiletApp: App {
+struct NRT_in_C5App: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -22,10 +22,10 @@ struct ReporToiletApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
-
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
         .modelContainer(sharedModelContainer)
     }
