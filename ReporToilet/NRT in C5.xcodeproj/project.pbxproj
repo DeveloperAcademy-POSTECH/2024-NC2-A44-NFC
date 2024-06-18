@@ -16,6 +16,8 @@
 		840E4B3E2C208C6200B06B20 /* NRT_in_C5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B3D2C208C6200B06B20 /* NRT_in_C5UITests.swift */; };
 		840E4B402C208C6200B06B20 /* NRT_in_C5UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B3F2C208C6200B06B20 /* NRT_in_C5UITestsLaunchTests.swift */; };
 		840E4B4D2C20A20500B06B20 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B4C2C20A20500B06B20 /* MainView.swift */; };
+		840E4B502C21A16100B06B20 /* ToiletSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B4F2C21A16100B06B20 /* ToiletSheet.swift */; };
+		840E4B522C21B59B00B06B20 /* WashbasinSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B512C21B59B00B06B20 /* WashbasinSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		840E4B3D2C208C6200B06B20 /* NRT_in_C5UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRT_in_C5UITests.swift; sourceTree = "<group>"; };
 		840E4B3F2C208C6200B06B20 /* NRT_in_C5UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRT_in_C5UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		840E4B4C2C20A20500B06B20 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		840E4B4F2C21A16100B06B20 /* ToiletSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletSheet.swift; sourceTree = "<group>"; };
+		840E4B512C21B59B00B06B20 /* WashbasinSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashbasinSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				840E4B4C2C20A20500B06B20 /* MainView.swift */,
+				840E4B4F2C21A16100B06B20 /* ToiletSheet.swift */,
+				840E4B512C21B59B00B06B20 /* WashbasinSheet.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -271,10 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840E4B522C21B59B00B06B20 /* WashbasinSheet.swift in Sources */,
 				840E4B232C208C6000B06B20 /* ContentView.swift in Sources */,
 				840E4B4D2C20A20500B06B20 /* MainView.swift in Sources */,
 				840E4B252C208C6000B06B20 /* Item.swift in Sources */,
 				840E4B212C208C6000B06B20 /* NRT_in_C5App.swift in Sources */,
+				840E4B502C21A16100B06B20 /* ToiletSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
