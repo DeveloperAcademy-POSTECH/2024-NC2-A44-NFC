@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class ReporToiletUITestsLaunchTests: XCTestCase {
+final class NRT_in_C5UITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
