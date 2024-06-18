@@ -76,7 +76,10 @@ struct Buttons: View {
                         }
                     }
                     .frame(width: 171, height: 241)
-                    .background(.gray)
+                    .background(
+                        Image("\(category)")
+                            .resizable()
+                    )
                     
                 }
             }
@@ -94,7 +97,6 @@ struct SheetView: View {
     @Binding var selectedBtn: String
     
     var body: some View {
-        
         VStack {
             if selectedBtn == "toilet" || selectedBtn == "toiletpaper" {
                 ToiletSheet()
@@ -107,9 +109,6 @@ struct SheetView: View {
                     .foregroundColor(.red)
             }
         }
-        .frame(width: 361, height: 501)
-        .background(.white)
-        .cornerRadius(16)
     }
 }
 

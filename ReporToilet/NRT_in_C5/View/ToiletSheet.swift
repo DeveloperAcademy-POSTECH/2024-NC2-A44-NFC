@@ -8,43 +8,43 @@
 import SwiftUI
 
 struct ToiletSheet: View {
-    @State var selectedSection: String = "none"
+    @State var selectedToiletSection: String = "A"
     
     var body: some View {
         VStack {
-            Text("몇 번째 칸인가요?")
-                .font(.system(size: 24))
+            Text("변기 위치는 어디인가요?")
+                .font(.system(size: 28))
                 .bold()
                 .padding(.leading, 16)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top, 50)
             
-            Image("selected_\(selectedSection)")
+            Image("toilet_\(selectedToiletSection)")
                 .resizable()
                 .frame(width: 329, height: 109)
             
             HStack {
-                ForEach(Section.allCases, id: \.self) { item in
+                ForEach(toiletSection.allCases, id: \.self) { item in
                     Button(action: {
-                        selectedSection = "\(item)"
+                        selectedToiletSection = "\(item)"
                     }) {
                         Text("\(item)")
                             .font(.system(size: 24))
                             .bold()
-                            .foregroundStyle(
-                                selectedSection != "\(item)" ?
-                                    .gray : .white
+                            .foregroundColor(
+                                selectedToiletSection != "\(item)" ? .gray : .blue
                             )
                     }
                     .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 60)
-                    .background(
-                        selectedSection != "\(item)" ?
-                        Color(red: 232 / 255, green: 232 / 255, blue: 232 / 255) : .blue
+                    .border(
+                        selectedToiletSection != "\(item)" ? .gray : .blue
                     )
                 }
-                .cornerRadius(6)
                 .padding(.top, 10)
             }
             .padding(.bottom, 20)
+            
+            Spacer()
             
             Text("신고하시겠습니까?")
                 .font(.system(size: 24))
@@ -56,18 +56,19 @@ struct ToiletSheet: View {
                 
             }) {
                 Text("신고하기")
-                    .font(.system(size: 24))
+                    .font(.system(size: 22))
                     .bold()
                     .foregroundColor(.white)
             }
-            .frame(width: 331, height: 60)
+            .frame(width: 361, height: 60)
             .background(.blue)
             .cornerRadius(6)
+            .padding(.bottom, 50)
         }
     }
 }
 
-enum Section: String, CaseIterable {
+enum toiletSection: String, CaseIterable {
     case A
     case B
     case C
