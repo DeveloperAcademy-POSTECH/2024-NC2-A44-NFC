@@ -1,14 +1,14 @@
 //
-//  ReportModalView.swift
+//  InAppWashbasinSheet.swift
 //  NRT in C5
 //
-//  Created by EVIE on 6/18/24.
+//  Created by EVIE on 6/20/24.
 //
 
 import SwiftUI
 
-struct WashbasinSheet: View {
-    @State var selectedWashbasinSection: String = "A"
+struct InAppWashbasinSheet: View {
+    @Binding var selectedInAppWashbasinSection: String
     
     var body: some View {
         VStack {
@@ -19,33 +19,31 @@ struct WashbasinSheet: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 50)
             
-            Image("washbasin_\(selectedWashbasinSection)")
+            Image("washbasin_\(selectedInAppWashbasinSection)")
                 .resizable()
                 .frame(width: 329, height: 109)
             
             HStack {
-                ForEach(washbasinSection.allCases, id: \.self) { item in
+                ForEach(WashbasinSection.allCases, id: \.self) { item in
                     Button(action: {
-                        selectedWashbasinSection = "\(item)"
+                        selectedInAppWashbasinSection = item.rawValue
                     }) {
                         Text("\(item)")
                             .font(.system(size: 24))
                             .bold()
                             .foregroundColor(
-                                selectedWashbasinSection != "\(item)" ? .gray : .blue
+                                selectedInAppWashbasinSection != item.rawValue ? .gray : .blue
                             )
                     }
                     .frame(width: 172, height: 60)
                     .cornerRadius(6)
                     .border(
-                        selectedWashbasinSection != "\(item)" ? .gray : .blue
+                        selectedInAppWashbasinSection != item.rawValue ? .gray : .blue
                     )
                 }
                 .padding(.top, 10)
             }
             .padding(.bottom, 20)
-            
-            Spacer()
             
             Text("신고하시겠습니까?")
                 .font(.system(size: 22))
@@ -53,27 +51,8 @@ struct WashbasinSheet: View {
                 .padding(.leading, 16)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            Button(action: {
-                
-            }) {
-                Text("신고하기")
-                    .font(.system(size: 24))
-                    .bold()
-                    .foregroundColor(.white)
-            }
-            .frame(width: 361, height: 60)
-            .background(.blue)
-            .cornerRadius(6)
-            .padding(.bottom, 50)
+            SendReportButton()
         }
     }
 }
 
-enum washbasinSection: String, CaseIterable {
-    case A
-    case B
-}
-
-#Preview {
-    WashbasinSheet(selectedWashbasinSection: "A")
-}

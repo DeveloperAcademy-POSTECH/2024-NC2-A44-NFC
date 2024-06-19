@@ -18,6 +18,13 @@
 		840E4B4D2C20A20500B06B20 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B4C2C20A20500B06B20 /* MainView.swift */; };
 		840E4B502C21A16100B06B20 /* ToiletSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B4F2C21A16100B06B20 /* ToiletSheet.swift */; };
 		840E4B522C21B59B00B06B20 /* WashbasinSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B512C21B59B00B06B20 /* WashbasinSheet.swift */; };
+		840E4B5A2C22EA2000B06B20 /* InAppToiletSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B592C22EA2000B06B20 /* InAppToiletSheet.swift */; };
+		840E4B5C2C22EB8F00B06B20 /* NFCReadAndWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B5B2C22EB8F00B06B20 /* NFCReadAndWrite.swift */; };
+		840E4B5E2C22F41400B06B20 /* NFCWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B5D2C22F41400B06B20 /* NFCWrite.swift */; };
+		840E4B602C22F67800B06B20 /* SendReportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B5F2C22F67800B06B20 /* SendReportButton.swift */; };
+		840E4B652C232E6B00B06B20 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B642C232E6B00B06B20 /* Enums.swift */; };
+		840E4B692C234B9500B06B20 /* InAppWashbasinSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B682C234B9500B06B20 /* InAppWashbasinSheet.swift */; };
+		840E4B6B2C2355CE00B06B20 /* InAppSOSSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B6A2C2355CE00B06B20 /* InAppSOSSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +59,15 @@
 		840E4B4C2C20A20500B06B20 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		840E4B4F2C21A16100B06B20 /* ToiletSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletSheet.swift; sourceTree = "<group>"; };
 		840E4B512C21B59B00B06B20 /* WashbasinSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashbasinSheet.swift; sourceTree = "<group>"; };
+		840E4B532C21E61100B06B20 /* NRT-in-C5-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "NRT-in-C5-Info.plist"; sourceTree = "<group>"; };
+		840E4B542C21E9FE00B06B20 /* NRT in C5.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "NRT in C5.entitlements"; sourceTree = "<group>"; };
+		840E4B592C22EA2000B06B20 /* InAppToiletSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppToiletSheet.swift; sourceTree = "<group>"; };
+		840E4B5B2C22EB8F00B06B20 /* NFCReadAndWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReadAndWrite.swift; sourceTree = "<group>"; };
+		840E4B5D2C22F41400B06B20 /* NFCWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCWrite.swift; sourceTree = "<group>"; };
+		840E4B5F2C22F67800B06B20 /* SendReportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendReportButton.swift; sourceTree = "<group>"; };
+		840E4B642C232E6B00B06B20 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		840E4B682C234B9500B06B20 /* InAppWashbasinSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppWashbasinSheet.swift; sourceTree = "<group>"; };
+		840E4B6A2C2355CE00B06B20 /* InAppSOSSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppSOSSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +98,8 @@
 		840E4B142C208C6000B06B20 = {
 			isa = PBXGroup;
 			children = (
+				840E4B542C21E9FE00B06B20 /* NRT in C5.entitlements */,
+				840E4B532C21E61100B06B20 /* NRT-in-C5-Info.plist */,
 				840E4B1F2C208C6000B06B20 /* NRT_in_C5 */,
 				840E4B322C208C6200B06B20 /* NRT_in_C5Tests */,
 				840E4B3C2C208C6200B06B20 /* NRT_in_C5UITests */,
@@ -105,6 +123,9 @@
 				840E4B202C208C6000B06B20 /* NRT_in_C5App.swift */,
 				840E4B222C208C6000B06B20 /* ContentView.swift */,
 				840E4B242C208C6000B06B20 /* Item.swift */,
+				840E4B632C232E5800B06B20 /* Enums */,
+				840E4B622C2309BA00B06B20 /* NFC */,
+				840E4B612C23099600B06B20 /* Component */,
 				840E4B4E2C2155A800B06B20 /* View */,
 				840E4B262C208C6200B06B20 /* Assets.xcassets */,
 				840E4B282C208C6200B06B20 /* Preview Content */,
@@ -141,10 +162,54 @@
 			isa = PBXGroup;
 			children = (
 				840E4B4C2C20A20500B06B20 /* MainView.swift */,
+				840E4B582C22E9E000B06B20 /* InAppSheet */,
+				840E4B572C22E9C400B06B20 /* NFCSheet */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		840E4B572C22E9C400B06B20 /* NFCSheet */ = {
+			isa = PBXGroup;
+			children = (
 				840E4B4F2C21A16100B06B20 /* ToiletSheet.swift */,
 				840E4B512C21B59B00B06B20 /* WashbasinSheet.swift */,
 			);
-			path = View;
+			path = NFCSheet;
+			sourceTree = "<group>";
+		};
+		840E4B582C22E9E000B06B20 /* InAppSheet */ = {
+			isa = PBXGroup;
+			children = (
+				840E4B592C22EA2000B06B20 /* InAppToiletSheet.swift */,
+				840E4B682C234B9500B06B20 /* InAppWashbasinSheet.swift */,
+				840E4B6A2C2355CE00B06B20 /* InAppSOSSheet.swift */,
+			);
+			path = InAppSheet;
+			sourceTree = "<group>";
+		};
+		840E4B612C23099600B06B20 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				840E4B5F2C22F67800B06B20 /* SendReportButton.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		840E4B622C2309BA00B06B20 /* NFC */ = {
+			isa = PBXGroup;
+			children = (
+				840E4B5B2C22EB8F00B06B20 /* NFCReadAndWrite.swift */,
+				840E4B5D2C22F41400B06B20 /* NFCWrite.swift */,
+			);
+			path = NFC;
+			sourceTree = "<group>";
+		};
+		840E4B632C232E5800B06B20 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				840E4B642C232E6B00B06B20 /* Enums.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,12 +342,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840E4B5E2C22F41400B06B20 /* NFCWrite.swift in Sources */,
+				840E4B602C22F67800B06B20 /* SendReportButton.swift in Sources */,
 				840E4B522C21B59B00B06B20 /* WashbasinSheet.swift in Sources */,
 				840E4B232C208C6000B06B20 /* ContentView.swift in Sources */,
 				840E4B4D2C20A20500B06B20 /* MainView.swift in Sources */,
+				840E4B692C234B9500B06B20 /* InAppWashbasinSheet.swift in Sources */,
+				840E4B6B2C2355CE00B06B20 /* InAppSOSSheet.swift in Sources */,
 				840E4B252C208C6000B06B20 /* Item.swift in Sources */,
+				840E4B5C2C22EB8F00B06B20 /* NFCReadAndWrite.swift in Sources */,
 				840E4B212C208C6000B06B20 /* NRT_in_C5App.swift in Sources */,
 				840E4B502C21A16100B06B20 /* ToiletSheet.swift in Sources */,
+				840E4B5A2C22EA2000B06B20 /* InAppToiletSheet.swift in Sources */,
+				840E4B652C232E6B00B06B20 /* Enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,12 +515,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "NRT in C5.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NRT_in_C5/Preview Content\"";
 				DEVELOPMENT_TEAM = MCADUG6F79;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NRT-in-C5-Info.plist";
+				INFOPLIST_KEY_NFCReaderUsageDescription = "For Scanning Tag";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -459,7 +534,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.ADA.MC2.ReporToilet;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.ADA.MC2.NRT.in.C5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -472,12 +547,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "NRT in C5.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NRT_in_C5/Preview Content\"";
 				DEVELOPMENT_TEAM = MCADUG6F79;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NRT-in-C5-Info.plist";
+				INFOPLIST_KEY_NFCReaderUsageDescription = "For Scanning Tag";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -488,7 +566,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.ADA.MC2.ReporToilet;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.ADA.MC2.NRT.in.C5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
