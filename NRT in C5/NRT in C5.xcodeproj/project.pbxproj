@@ -23,6 +23,7 @@
 		840E4B5E2C22F41400B06B20 /* NFCWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B5D2C22F41400B06B20 /* NFCWrite.swift */; };
 		840E4B602C22F67800B06B20 /* SendReportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B5F2C22F67800B06B20 /* SendReportButton.swift */; };
 		840E4B652C232E6B00B06B20 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B642C232E6B00B06B20 /* Enums.swift */; };
+		840E4B692C234B9500B06B20 /* InAppWashbasinSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B682C234B9500B06B20 /* InAppWashbasinSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		840E4B5D2C22F41400B06B20 /* NFCWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCWrite.swift; sourceTree = "<group>"; };
 		840E4B5F2C22F67800B06B20 /* SendReportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendReportButton.swift; sourceTree = "<group>"; };
 		840E4B642C232E6B00B06B20 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		840E4B682C234B9500B06B20 /* InAppWashbasinSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppWashbasinSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				840E4B592C22EA2000B06B20 /* InAppToiletSheet.swift */,
+				840E4B682C234B9500B06B20 /* InAppWashbasinSheet.swift */,
 			);
 			path = InAppSheet;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				840E4B522C21B59B00B06B20 /* WashbasinSheet.swift in Sources */,
 				840E4B232C208C6000B06B20 /* ContentView.swift in Sources */,
 				840E4B4D2C20A20500B06B20 /* MainView.swift in Sources */,
+				840E4B692C234B9500B06B20 /* InAppWashbasinSheet.swift in Sources */,
 				840E4B252C208C6000B06B20 /* Item.swift in Sources */,
 				840E4B5C2C22EB8F00B06B20 /* NFCReadAndWrite.swift in Sources */,
 				840E4B212C208C6000B06B20 /* NRT_in_C5App.swift in Sources */,

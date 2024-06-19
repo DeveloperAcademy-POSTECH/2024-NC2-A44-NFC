@@ -137,7 +137,7 @@ struct SheetView: View {
             if selectedButton == Category.toilet.rawValue || selectedButton == Category.toiletpaper.rawValue {
                 InAppToiletSheet(selectedInAppToiletSection: selectedToiletSection)
             } else if selectedButton == Category.washbasin.rawValue {
-                WashbasinSheet(selectedWashbasinSection: $selectedWashbasinSection)
+                InAppWashbasinSheet(selectedInAppWashbasinSection: $selectedWashbasinSection)
             } else if selectedButton == Category.nfcToilet.rawValue {
                 ToiletSheet(selectedToiletSection: selectedToiletSection)
             } else if selectedButton == Category.nfcWashbasin.rawValue {

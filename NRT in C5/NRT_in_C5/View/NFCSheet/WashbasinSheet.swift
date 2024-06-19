@@ -12,7 +12,7 @@ struct WashbasinSheet: View {
     
     var body: some View {
         VStack {
-            Text("세면대 위치는 어디인가요?")
+            Text("5층 여자화장실 \(selectedWashbasinSection)세면대")
                 .font(.system(size: 28))
                 .bold()
                 .padding(.leading, 16)
@@ -23,48 +23,13 @@ struct WashbasinSheet: View {
                 .resizable()
                 .frame(width: 329, height: 109)
             
-            HStack {
-                ForEach(WashbasinSection.allCases, id: \.self) { item in
-                    Button(action: {
-                        selectedWashbasinSection = item.rawValue
-                    }) {
-                        Text("\(item)")
-                            .font(.system(size: 24))
-                            .bold()
-                            .foregroundColor(
-                                selectedWashbasinSection != item.rawValue ? .gray : .blue
-                            )
-                    }
-                    .frame(width: 172, height: 60)
-                    .cornerRadius(6)
-                    .border(
-                        selectedWashbasinSection != item.rawValue ? .gray : .blue
-                    )
-                }
-                .padding(.top, 10)
-            }
-            .padding(.bottom, 20)
-            
-            Spacer()
-            
             Text("신고하시겠습니까?")
                 .font(.system(size: 22))
                 .bold()
                 .padding(.leading, 16)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            Button(action: {
-                
-            }) {
-                Text("신고하기")
-                    .font(.system(size: 24))
-                    .bold()
-                    .foregroundColor(.white)
-            }
-            .frame(width: 361, height: 60)
-            .background(.blue)
-            .cornerRadius(6)
-            .padding(.bottom, 50)
+            SendReportButton()
         }
     }
 }

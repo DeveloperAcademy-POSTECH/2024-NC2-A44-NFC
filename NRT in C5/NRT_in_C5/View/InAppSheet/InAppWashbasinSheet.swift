@@ -1,43 +1,44 @@
 //
-//  InAppToiletSheet.swift
+//  InAppWashbasinSheet.swift
 //  NRT in C5
 //
-//  Created by EVIE on 6/19/24.
+//  Created by EVIE on 6/20/24.
 //
 
 import SwiftUI
 
-struct InAppToiletSheet: View {
-    @State var selectedInAppToiletSection: String = "A"
+struct InAppWashbasinSheet: View {
+    @Binding var selectedInAppWashbasinSection: String
     
     var body: some View {
         VStack {
-            Text("몇 번째 칸인가요?")
+            Text("세면대 위치는 어디인가요?")
                 .font(.system(size: 28))
                 .bold()
                 .padding(.leading, 16)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 50)
             
-            Image("toilet_\(selectedInAppToiletSection)")
+            Image("washbasin_\(selectedInAppWashbasinSection)")
                 .resizable()
                 .frame(width: 329, height: 109)
             
             HStack {
-                ForEach(ToiletSection.allCases, id: \.self) { item in
+                ForEach(WashbasinSection.allCases, id: \.self) { item in
                     Button(action: {
-                        selectedInAppToiletSection = "\(item)"
+                        selectedInAppWashbasinSection = item.rawValue
                     }) {
                         Text("\(item)")
                             .font(.system(size: 24))
                             .bold()
                             .foregroundColor(
-                                selectedInAppToiletSection != "\(item)" ? .gray : .blue
+                                selectedInAppWashbasinSection != item.rawValue ? .gray : .blue
                             )
                     }
-                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 60)
+                    .frame(width: 172, height: 60)
+                    .cornerRadius(6)
                     .border(
-                        selectedInAppToiletSection != "\(item)" ? .gray : .blue
+                        selectedInAppWashbasinSection != item.rawValue ? .gray : .blue
                     )
                 }
                 .padding(.top, 10)
@@ -45,7 +46,7 @@ struct InAppToiletSheet: View {
             .padding(.bottom, 20)
             
             Text("신고하시겠습니까?")
-                .font(.system(size: 24))
+                .font(.system(size: 22))
                 .bold()
                 .padding(.leading, 16)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -54,3 +55,4 @@ struct InAppToiletSheet: View {
         }
     }
 }
+
