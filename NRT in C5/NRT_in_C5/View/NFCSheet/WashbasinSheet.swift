@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WashbasinSheet: View {
-    @State var selectedWashbasinSection: String = "A"
+    @Binding var selectedWashbasinSection: String
     
     var body: some View {
         VStack {
@@ -26,19 +26,19 @@ struct WashbasinSheet: View {
             HStack {
                 ForEach(washbasinSection.allCases, id: \.self) { item in
                     Button(action: {
-                        selectedWashbasinSection = "\(item)"
+                        selectedWashbasinSection = item.rawValue
                     }) {
                         Text("\(item)")
                             .font(.system(size: 24))
                             .bold()
                             .foregroundColor(
-                                selectedWashbasinSection != "\(item)" ? .gray : .blue
+                                selectedWashbasinSection != item.rawValue ? .gray : .blue
                             )
                     }
                     .frame(width: 172, height: 60)
                     .cornerRadius(6)
                     .border(
-                        selectedWashbasinSection != "\(item)" ? .gray : .blue
+                        selectedWashbasinSection != item.rawValue ? .gray : .blue
                     )
                 }
                 .padding(.top, 10)
@@ -72,8 +72,4 @@ struct WashbasinSheet: View {
 enum washbasinSection: String, CaseIterable {
     case A
     case B
-}
-
-#Preview {
-    WashbasinSheet(selectedWashbasinSection: "A")
 }
