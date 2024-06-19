@@ -24,6 +24,7 @@
 		840E4B602C22F67800B06B20 /* SendReportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B5F2C22F67800B06B20 /* SendReportButton.swift */; };
 		840E4B652C232E6B00B06B20 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B642C232E6B00B06B20 /* Enums.swift */; };
 		840E4B692C234B9500B06B20 /* InAppWashbasinSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B682C234B9500B06B20 /* InAppWashbasinSheet.swift */; };
+		840E4B6B2C2355CE00B06B20 /* InAppSOSSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B6A2C2355CE00B06B20 /* InAppSOSSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		840E4B5F2C22F67800B06B20 /* SendReportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendReportButton.swift; sourceTree = "<group>"; };
 		840E4B642C232E6B00B06B20 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		840E4B682C234B9500B06B20 /* InAppWashbasinSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppWashbasinSheet.swift; sourceTree = "<group>"; };
+		840E4B6A2C2355CE00B06B20 /* InAppSOSSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppSOSSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,9 +161,9 @@
 		840E4B4E2C2155A800B06B20 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				840E4B4C2C20A20500B06B20 /* MainView.swift */,
 				840E4B582C22E9E000B06B20 /* InAppSheet */,
 				840E4B572C22E9C400B06B20 /* NFCSheet */,
-				840E4B4C2C20A20500B06B20 /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +182,7 @@
 			children = (
 				840E4B592C22EA2000B06B20 /* InAppToiletSheet.swift */,
 				840E4B682C234B9500B06B20 /* InAppWashbasinSheet.swift */,
+				840E4B6A2C2355CE00B06B20 /* InAppSOSSheet.swift */,
 			);
 			path = InAppSheet;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				840E4B232C208C6000B06B20 /* ContentView.swift in Sources */,
 				840E4B4D2C20A20500B06B20 /* MainView.swift in Sources */,
 				840E4B692C234B9500B06B20 /* InAppWashbasinSheet.swift in Sources */,
+				840E4B6B2C2355CE00B06B20 /* InAppSOSSheet.swift in Sources */,
 				840E4B252C208C6000B06B20 /* Item.swift in Sources */,
 				840E4B5C2C22EB8F00B06B20 /* NFCReadAndWrite.swift in Sources */,
 				840E4B212C208C6000B06B20 /* NRT_in_C5App.swift in Sources */,

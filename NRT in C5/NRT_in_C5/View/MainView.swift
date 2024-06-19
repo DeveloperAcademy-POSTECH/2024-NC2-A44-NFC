@@ -143,10 +143,7 @@ struct SheetView: View {
             } else if selectedButton == Category.nfcWashbasin.rawValue {
                 WashbasinSheet(selectedWashbasinSection: $selectedWashbasinSection)
             } else {
-                Image(systemName: "phone.fill")
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    .foregroundColor(.red)
+                InAppSOSSheet()
             }
         }
     }
