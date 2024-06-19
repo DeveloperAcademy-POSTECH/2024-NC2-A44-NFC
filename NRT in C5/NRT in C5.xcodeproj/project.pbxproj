@@ -19,6 +19,9 @@
 		840E4B502C21A16100B06B20 /* ToiletSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B4F2C21A16100B06B20 /* ToiletSheet.swift */; };
 		840E4B522C21B59B00B06B20 /* WashbasinSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B512C21B59B00B06B20 /* WashbasinSheet.swift */; };
 		840E4B5A2C22EA2000B06B20 /* InAppToiletSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B592C22EA2000B06B20 /* InAppToiletSheet.swift */; };
+		840E4B5C2C22EB8F00B06B20 /* NFCReadAndWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B5B2C22EB8F00B06B20 /* NFCReadAndWrite.swift */; };
+		840E4B5E2C22F41400B06B20 /* NFCWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B5D2C22F41400B06B20 /* NFCWrite.swift */; };
+		840E4B602C22F67800B06B20 /* SendReportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B5F2C22F67800B06B20 /* SendReportButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		840E4B532C21E61100B06B20 /* NRT-in-C5-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "NRT-in-C5-Info.plist"; sourceTree = "<group>"; };
 		840E4B542C21E9FE00B06B20 /* NRT in C5.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "NRT in C5.entitlements"; sourceTree = "<group>"; };
 		840E4B592C22EA2000B06B20 /* InAppToiletSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppToiletSheet.swift; sourceTree = "<group>"; };
+		840E4B5B2C22EB8F00B06B20 /* NFCReadAndWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReadAndWrite.swift; sourceTree = "<group>"; };
+		840E4B5D2C22F41400B06B20 /* NFCWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCWrite.swift; sourceTree = "<group>"; };
+		840E4B5F2C22F67800B06B20 /* SendReportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendReportButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,8 @@
 				840E4B202C208C6000B06B20 /* NRT_in_C5App.swift */,
 				840E4B222C208C6000B06B20 /* ContentView.swift */,
 				840E4B242C208C6000B06B20 /* Item.swift */,
+				840E4B622C2309BA00B06B20 /* NFC */,
+				840E4B612C23099600B06B20 /* Component */,
 				840E4B4E2C2155A800B06B20 /* View */,
 				840E4B262C208C6200B06B20 /* Assets.xcassets */,
 				840E4B282C208C6200B06B20 /* Preview Content */,
@@ -168,6 +176,23 @@
 				840E4B592C22EA2000B06B20 /* InAppToiletSheet.swift */,
 			);
 			path = InAppSheet;
+			sourceTree = "<group>";
+		};
+		840E4B612C23099600B06B20 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				840E4B5F2C22F67800B06B20 /* SendReportButton.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		840E4B622C2309BA00B06B20 /* NFC */ = {
+			isa = PBXGroup;
+			children = (
+				840E4B5B2C22EB8F00B06B20 /* NFCReadAndWrite.swift */,
+				840E4B5D2C22F41400B06B20 /* NFCWrite.swift */,
+			);
+			path = NFC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,10 +325,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840E4B5E2C22F41400B06B20 /* NFCWrite.swift in Sources */,
+				840E4B602C22F67800B06B20 /* SendReportButton.swift in Sources */,
 				840E4B522C21B59B00B06B20 /* WashbasinSheet.swift in Sources */,
 				840E4B232C208C6000B06B20 /* ContentView.swift in Sources */,
 				840E4B4D2C20A20500B06B20 /* MainView.swift in Sources */,
 				840E4B252C208C6000B06B20 /* Item.swift in Sources */,
+				840E4B5C2C22EB8F00B06B20 /* NFCReadAndWrite.swift in Sources */,
 				840E4B212C208C6000B06B20 /* NRT_in_C5App.swift in Sources */,
 				840E4B502C21A16100B06B20 /* ToiletSheet.swift in Sources */,
 				840E4B5A2C22EA2000B06B20 /* InAppToiletSheet.swift in Sources */,

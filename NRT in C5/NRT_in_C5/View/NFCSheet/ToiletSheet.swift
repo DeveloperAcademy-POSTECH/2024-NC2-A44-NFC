@@ -52,18 +52,7 @@ struct ToiletSheet: View {
                 .padding(.leading, 16)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            Button(action: {
-                
-            }) {
-                Text("신고하기")
-                    .font(.system(size: 22))
-                    .bold()
-                    .foregroundColor(.white)
-            }
-            .frame(width: 361, height: 60)
-            .background(.blue)
-            .cornerRadius(6)
-            .padding(.bottom, 50)
+            SendReportButton()
         }
     }
 }
