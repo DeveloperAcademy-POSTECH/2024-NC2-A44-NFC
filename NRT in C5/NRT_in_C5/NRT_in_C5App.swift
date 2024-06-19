@@ -60,14 +60,14 @@ class URLHandler: ObservableObject {
     
     func handle(url: URL) {
         if url.host == "toilet" {
-            selectedCategory = .toilet
+            selectedCategory = .nfcToilet
             if let section = url.queryParameters?["section"] {
                 selectedToiletSection = section
             } else {
                 selectedToiletSection = "A"
             }
         } else if url.host == "washbasin" {
-            selectedCategory = .washbasin
+            selectedCategory = .nfcWashbasin
             if let section = url.queryParameters?["section"] {
                 selectedWashbasinSection = section
             } else {

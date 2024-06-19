@@ -17,8 +17,10 @@ struct MainView: View {
     var body: some View {
         VStack {
             HeaderView()
+            
             ButtonsView(isSheetPresented: $isSheetPresented, selectedButton: $selectedButton)
                 .padding(.bottom, 50)
+            
             AdminButton()
         }
         .frame(maxHeight: .infinity)
@@ -133,8 +135,12 @@ struct SheetView: View {
     var body: some View {
         VStack {
             if selectedButton == Category.toilet.rawValue || selectedButton == Category.toiletpaper.rawValue {
-                ToiletSheet(selectedToiletSection: selectedToiletSection)
+                InAppToiletSheet(selectedInAppToiletSection: selectedToiletSection)
             } else if selectedButton == Category.washbasin.rawValue {
+                WashbasinSheet(selectedWashbasinSection: $selectedWashbasinSection)
+            } else if selectedButton == Category.nfcToilet.rawValue {
+                ToiletSheet(selectedToiletSection: selectedToiletSection)
+            } else if selectedButton == Category.nfcWashbasin.rawValue {
                 WashbasinSheet(selectedWashbasinSection: $selectedWashbasinSection)
             } else {
                 Image(systemName: "phone.fill")

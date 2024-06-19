@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ToiletSheet: View {
     @State var selectedToiletSection: String = "A"
+    @State var selectedReports: Set<ReportType> = []
     
     var body: some View {
         VStack {
-            Text("변기 위치는 어디인가요?")
+            Text("5층 여자화장실 \(selectedToiletSection)칸")
                 .font(.system(size: 28))
                 .bold()
                 .padding(.leading, 16)
@@ -22,29 +23,40 @@ struct ToiletSheet: View {
             Image("toilet_\(selectedToiletSection)")
                 .resizable()
                 .frame(width: 329, height: 109)
+                .padding(.bottom, 20)
             
             HStack {
-                ForEach(toiletSection.allCases, id: \.self) { item in
+                Text("무슨 상황인가요?")
+                    .font(.system(size: 24))
+                    .bold()
+                Text("(복수선택 가능)")
+                    .font(.system(size: 14))
+                    .foregroundStyle(.gray)
+            }
+            .padding(.leading, 16)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            
+            HStack {
+                ForEach(ReportType.allCases, id: \.self) { report in
                     Button(action: {
-                        selectedToiletSection = "\(item)"
+                        selectedReports(report)
+                        print(selectedReports)
                     }) {
-                        Text("\(item)")
-                            .font(.system(size: 24))
+                        Text("\(report.rawValue)")
+                            .font(.system(size: 16))
                             .bold()
                             .foregroundColor(
-                                selectedToiletSection != "\(item)" ? .gray : .blue
+                                selectedReports.contains(report) ? .blue : .gray
                             )
                     }
-                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 60)
+                    .frame(width: 172, height: 60)
                     .border(
-                        selectedToiletSection != "\(item)" ? .gray : .blue
+                        selectedReports.contains(report) ? .blue : .gray
                     )
                 }
                 .padding(.top, 10)
             }
             .padding(.bottom, 20)
-            
-            Spacer()
             
             Text("신고하시겠습니까?")
                 .font(.system(size: 24))
@@ -52,7 +64,27 @@ struct ToiletSheet: View {
                 .padding(.leading, 16)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            SendReportButton()
+            VStack {
+                Button(action: {
+                    
+                }) {
+                    Text("신고하기")
+                        .font(.system(size: 24))
+                        .bold()
+                        .foregroundColor(.white)
+                }
+            }
+            .frame(width: 361, height: 60)
+            .background(.blue)
+            .cornerRadius(6)
+            .padding(.bottom, 50)
+        }
+    }
+    private func selectedReports(_ report: ReportType) {
+        if selectedReports.contains(report) {
+            selectedReports.remove(report)
+        } else {
+            selectedReports.insert(report)
         }
     }
 }

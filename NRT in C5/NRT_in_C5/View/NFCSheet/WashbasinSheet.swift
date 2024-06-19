@@ -24,7 +24,7 @@ struct WashbasinSheet: View {
                 .frame(width: 329, height: 109)
             
             HStack {
-                ForEach(washbasinSection.allCases, id: \.self) { item in
+                ForEach(WashbasinSection.allCases, id: \.self) { item in
                     Button(action: {
                         selectedWashbasinSection = item.rawValue
                     }) {

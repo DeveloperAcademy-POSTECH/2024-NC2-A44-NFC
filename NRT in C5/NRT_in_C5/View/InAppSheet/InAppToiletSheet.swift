@@ -8,36 +8,36 @@
 import SwiftUI
 
 struct InAppToiletSheet: View {
-    @State var selectedToiletSection: String = "A"
+    @State var selectedInAppToiletSection: String = "A"
     
     var body: some View {
         VStack {
-            Text("변기 위치는 어디인가요?")
+            Text("인앱변기 위치는 어디인가요?")
                 .font(.system(size: 28))
                 .bold()
                 .padding(.leading, 16)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 50)
             
-            Image("toilet_\(selectedToiletSection)")
+            Image("toilet_\(selectedInAppToiletSection)")
                 .resizable()
                 .frame(width: 329, height: 109)
             
             HStack {
-                ForEach(toiletSection.allCases, id: \.self) { item in
+                ForEach(ToiletSection.allCases, id: \.self) { item in
                     Button(action: {
-                        selectedToiletSection = "\(item)"
+                        selectedInAppToiletSection = "\(item)"
                     }) {
                         Text("\(item)")
                             .font(.system(size: 24))
                             .bold()
                             .foregroundColor(
-                                selectedToiletSection != "\(item)" ? .gray : .blue
+                                selectedInAppToiletSection != "\(item)" ? .gray : .blue
                             )
                     }
                     .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 60)
                     .border(
-                        selectedToiletSection != "\(item)" ? .gray : .blue
+                        selectedInAppToiletSection != "\(item)" ? .gray : .blue
                     )
                 }
                 .padding(.top, 10)
