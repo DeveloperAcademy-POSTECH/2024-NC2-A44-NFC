@@ -23,6 +23,8 @@ struct WashbasinSheet: View {
                 .resizable()
                 .frame(width: 329, height: 109)
             
+            Spacer()
+            
             Text("신고하시겠습니까?")
                 .font(.system(size: 22))
                 .bold()

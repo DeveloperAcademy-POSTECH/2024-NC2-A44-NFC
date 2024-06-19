@@ -49,7 +49,7 @@ struct MainView: View {
         }
         .sheet(isPresented: $isSheetPresented) {
             SheetView(isSheetPresented: $isSheetPresented, selectedButton: $selectedButton, selectedToiletSection: $selectedToiletSection, selectedWashbasinSection: $selectedWashbasinSection)
-                .presentationDetents(selectedButton == "sos" ? [.large] : [.medium])
+                .presentationDetents(selectedButton == "sos" ? [.large] : selectedButton == "nfcToilet" ? [.height(519)] : [.medium])
         }
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ToiletSheet: View {
     @State var selectedToiletSection: String = "A"
-    @State var selectedReports: Set<ReportType> = []
+    @State var selectedReports: Set<String> = []
     
     var body: some View {
         VStack {
@@ -39,19 +39,18 @@ struct ToiletSheet: View {
             HStack {
                 ForEach(ReportType.allCases, id: \.self) { report in
                     Button(action: {
-                        selectedReports(report)
-                        print(selectedReports)
+                        selectedReports(report.rawValue)
                     }) {
                         Text("\(report.rawValue)")
                             .font(.system(size: 16))
                             .bold()
                             .foregroundColor(
-                                selectedReports.contains(report) ? .blue : .gray
+                                selectedReports.contains(report.rawValue) ? .blue : .gray
                             )
                     }
                     .frame(width: 172, height: 60)
                     .border(
-                        selectedReports.contains(report) ? .blue : .gray
+                        selectedReports.contains(report.rawValue) ? .blue : .gray
                     )
                 }
                 .padding(.top, 10)
@@ -80,7 +79,7 @@ struct ToiletSheet: View {
             .padding(.bottom, 50)
         }
     }
-    private func selectedReports(_ report: ReportType) {
+    private func selectedReports(_ report: String) {
         if selectedReports.contains(report) {
             selectedReports.remove(report)
         } else {
