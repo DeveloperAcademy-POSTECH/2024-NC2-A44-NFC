@@ -15,13 +15,24 @@ struct MainView: View {
     @State private var selectedWashbasinSection: String = "A"
     
     var body: some View {
-        VStack {
-            HeaderView()
+        ZStack {
+            VStack {
+                HeaderView()
+                
+                ButtonsView(isSheetPresented: $isSheetPresented, selectedButton: $selectedButton)
+                    .padding(.bottom, 50)
+                
+                AdminButton()
+            }
+            .blur(radius: isSheetPresented ? 12 : 0)
             
-            ButtonsView(isSheetPresented: $isSheetPresented, selectedButton: $selectedButton)
-                .padding(.bottom, 50)
-            
-            AdminButton()
+            if isSheetPresented {
+                Rectangle()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(.black)
+                    .opacity(0.3)
+                    .padding(.top, -60)
+            }
         }
         .frame(maxHeight: .infinity)
         .onChange(of: urlHandler.selectedCategory) { category in
@@ -38,6 +49,7 @@ struct MainView: View {
         }
         .sheet(isPresented: $isSheetPresented) {
             SheetView(isSheetPresented: $isSheetPresented, selectedButton: $selectedButton, selectedToiletSection: $selectedToiletSection, selectedWashbasinSection: $selectedWashbasinSection)
+                .presentationDetents(selectedButton == "sos" ? [.large] : [.medium])
         }
     }
 }
