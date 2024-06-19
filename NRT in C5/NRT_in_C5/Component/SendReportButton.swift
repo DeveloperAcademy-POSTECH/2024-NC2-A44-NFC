@@ -32,12 +32,6 @@ struct SendReportButton: View {
         }
 }
 
-struct SendReportButton_Previews: PreviewProvider {
-    static var previews: some View {
-        SendReportButton()
-    }
-}
-
 struct MessageComposeView: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
     
@@ -49,9 +43,7 @@ struct MessageComposeView: UIViewControllerRepresentable {
         return composeViewController
     }
 
-    func updateUIViewController(_ uiViewController: MFMessageComposeViewController, context: Context) {
-        // No updates needed
-    }
+    func updateUIViewController(_ uiViewController: MFMessageComposeViewController, context: Context) { }
 
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)

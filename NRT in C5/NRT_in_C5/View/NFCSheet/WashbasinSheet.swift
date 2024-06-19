@@ -68,8 +68,3 @@ struct WashbasinSheet: View {
         }
     }
 }
-
-enum washbasinSection: String, CaseIterable {
-    case A
-    case B
-}

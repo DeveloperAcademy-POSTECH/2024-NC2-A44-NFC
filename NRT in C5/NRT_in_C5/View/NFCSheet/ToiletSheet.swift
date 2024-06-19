@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ToiletSheet: View {
-    @Binding var selectedToiletSection: String
+    @State var selectedToiletSection: String = "A"
     
     var body: some View {
         VStack {
@@ -26,18 +26,18 @@ struct ToiletSheet: View {
             HStack {
                 ForEach(toiletSection.allCases, id: \.self) { item in
                     Button(action: {
-                        selectedToiletSection = item.rawValue
+                        selectedToiletSection = "\(item)"
                     }) {
                         Text("\(item)")
                             .font(.system(size: 24))
                             .bold()
                             .foregroundColor(
-                                selectedToiletSection != item.rawValue ? .gray : .blue
+                                selectedToiletSection != "\(item)" ? .gray : .blue
                             )
                     }
                     .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 60)
                     .border(
-                        selectedToiletSection != item.rawValue ? .gray : .blue
+                        selectedToiletSection != "\(item)" ? .gray : .blue
                     )
                 }
                 .padding(.top, 10)
@@ -55,10 +55,4 @@ struct ToiletSheet: View {
             SendReportButton()
         }
     }
-}
-
-enum toiletSection: String, CaseIterable {
-    case A
-    case B
-    case C
 }

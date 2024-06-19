@@ -133,7 +133,7 @@ struct SheetView: View {
     var body: some View {
         VStack {
             if selectedButton == Category.toilet.rawValue || selectedButton == Category.toiletpaper.rawValue {
-                ToiletSheet(selectedToiletSection: $selectedToiletSection)
+                ToiletSheet(selectedToiletSection: selectedToiletSection)
             } else if selectedButton == Category.washbasin.rawValue {
                 WashbasinSheet(selectedWashbasinSection: $selectedWashbasinSection)
             } else {
@@ -143,19 +143,5 @@ struct SheetView: View {
                     .foregroundColor(.red)
             }
         }
-    }
-}
-
-enum Category: String, CaseIterable {
-    case washbasin
-    case toilet
-    case toiletpaper
-    case sos
-}
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-            .environmentObject(URLHandler())
     }
 }
