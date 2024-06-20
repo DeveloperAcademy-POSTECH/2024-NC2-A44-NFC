@@ -12,7 +12,7 @@ struct InAppToiletSheet: View {
     
     var body: some View {
         VStack {
-            Text("몇 번째 칸인가요?")
+            Text("어느 위치에 계신가요?")
                 .font(.system(size: 28))
                 .bold()
                 .padding(.leading, 16)
@@ -35,7 +35,7 @@ struct InAppToiletSheet: View {
                                 selectedInAppToiletSection != "\(item)" ? .gray : .blue
                             )
                     }
-                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 60)
+                    .frame(width: 109, height: 80)
                     .border(
                         selectedInAppToiletSection != "\(item)" ? .gray : .blue
                     )
@@ -44,9 +44,9 @@ struct InAppToiletSheet: View {
             }
             .padding(.bottom, 20)
             
-            Text("신고하시겠습니까?")
-                .font(.system(size: 24))
-                .bold()
+            Text("관리자에게 메시지가 전달됩니다.")
+                .font(.system(size: 14))
+                .foregroundStyle(.gray)
                 .padding(.leading, 16)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }

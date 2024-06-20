@@ -29,7 +29,8 @@ struct SendReportButton: View {
         .frame(width: 361, height: 60)
         .background(.blue)
         .cornerRadius(6)
-        .padding(.bottom, 50)
+        .padding(.bottom, 40)
+        .padding(.top, 10)
         .sheet(isPresented: $isShowingMessageCompose) {
             MessageComposeView(selectedButton: $selectedButton, selectedToiletSection: $selectedToiletSection, selectedWashbasinSection: $selectedWashbasinSection, selectedReports: $selectedReports)
         }
