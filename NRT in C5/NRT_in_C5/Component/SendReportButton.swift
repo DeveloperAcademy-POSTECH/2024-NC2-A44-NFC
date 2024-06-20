@@ -13,6 +13,7 @@ struct SendReportButton: View {
     @Binding var selectedButton: String
     @Binding var selectedToiletSection: String
     @Binding var selectedWashbasinSection: String
+    @Binding var selectedReports: Set<String>
     
     var body: some View {
         VStack {
@@ -30,7 +31,7 @@ struct SendReportButton: View {
         .cornerRadius(6)
         .padding(.bottom, 50)
         .sheet(isPresented: $isShowingMessageCompose) {
-            MessageComposeView(selectedButton: $selectedButton, selectedToiletSection: $selectedToiletSection, selectedWashbasinSection: $selectedWashbasinSection)
+            MessageComposeView(selectedButton: $selectedButton, selectedToiletSection: $selectedToiletSection, selectedWashbasinSection: $selectedWashbasinSection, selectedReports: $selectedReports)
         }
     }
 }
@@ -40,6 +41,7 @@ struct MessageComposeView: UIViewControllerRepresentable {
     @Binding var selectedButton: String
     @Binding var selectedToiletSection: String
     @Binding var selectedWashbasinSection: String
+    @Binding var selectedReports: Set<String>
     
     func makeUIViewController(context: Context) -> MFMessageComposeViewController {
         let composeViewController = MFMessageComposeViewController()
@@ -52,7 +54,7 @@ struct MessageComposeView: UIViewControllerRepresentable {
         } else if selectedButton == "toiletpaper"  {
             composeViewController.body = "🧻 5층 여자화장실 변기 \(selectedToiletSection)칸 휴지가 없어요!"
         } else if selectedButton == "nfcToilet"  {
-            composeViewController.body = "🧻 5층 여자화장실 변기 \(selectedToiletSection)칸 휴지도 없고 변기도 막혔어요!"
+            composeViewController.body = "🧻 5층 여자화장실 변기 \(selectedToiletSection)칸 \(selectedReports)"
         } else {
             composeViewController.body = "‼️ 5층 여자화장실 도움이 필요해요!"
         }

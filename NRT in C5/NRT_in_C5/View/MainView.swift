@@ -13,6 +13,7 @@ struct MainView: View {
     @State private var selectedButton: String = ""
     @State private var selectedToiletSection: String = "A"
     @State private var selectedWashbasinSection: String = "A"
+    @State private var selectedReports: Set<String> = []
     
     var body: some View {
         ZStack {
@@ -48,7 +49,7 @@ struct MainView: View {
             }
         }
         .sheet(isPresented: $isSheetPresented) {
-            SheetView(isSheetPresented: $isSheetPresented, selectedButton: $selectedButton, selectedToiletSection: $selectedToiletSection, selectedWashbasinSection: $selectedWashbasinSection)
+            SheetView(isSheetPresented: $isSheetPresented, selectedButton: $selectedButton, selectedToiletSection: $selectedToiletSection, selectedWashbasinSection: $selectedWashbasinSection, selectedReports: $selectedReports)
                 .presentationDetents(selectedButton == "sos" ? [.large] : selectedButton == "nfcToilet" ? [.height(519)] : [.medium])
         }
     }
@@ -143,6 +144,7 @@ struct SheetView: View {
     @Binding var selectedButton: String
     @Binding var selectedToiletSection: String
     @Binding var selectedWashbasinSection: String
+    @Binding var selectedReports: Set<String>
     
     var body: some View {
         VStack {
@@ -157,7 +159,7 @@ struct SheetView: View {
             } else {
                 InAppSOSSheet()
             }
-            SendReportButton(selectedButton: $selectedButton, selectedToiletSection: $selectedToiletSection, selectedWashbasinSection: $selectedWashbasinSection)
+            SendReportButton(selectedButton: $selectedButton, selectedToiletSection: $selectedToiletSection, selectedWashbasinSection: $selectedWashbasinSection, selectedReports: $selectedReports)
         }
     }
 }
