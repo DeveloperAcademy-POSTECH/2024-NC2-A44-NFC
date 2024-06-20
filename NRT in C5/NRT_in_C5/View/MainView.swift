@@ -33,6 +33,7 @@ struct MainView: View {
                     .background(.black)
                     .opacity(0.3)
                     .padding(.top, -60)
+                    .padding(.bottom, -60)
             }
         }
         .frame(maxHeight: .infinity)
