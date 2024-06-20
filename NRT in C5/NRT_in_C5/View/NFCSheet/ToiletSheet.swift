@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ToiletSheet: View {
-    @State var selectedToiletSection: String = "A"
+    @Binding var selectedToiletSection: String
     @State var selectedReports: Set<String> = []
     
     var body: some View {
@@ -57,26 +57,11 @@ struct ToiletSheet: View {
             }
             .padding(.bottom, 20)
             
-            Text("신고하시겠습니까?")
-                .font(.system(size: 24))
-                .bold()
+            Text("관리자에게 메시지가 전달됩니다.")
+                .font(.system(size: 14))
+                .foregroundStyle(.gray)
                 .padding(.leading, 16)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            
-            VStack {
-                Button(action: {
-                    
-                }) {
-                    Text("신고하기")
-                        .font(.system(size: 24))
-                        .bold()
-                        .foregroundColor(.white)
-                }
-            }
-            .frame(width: 361, height: 60)
-            .background(.blue)
-            .cornerRadius(6)
-            .padding(.bottom, 50)
         }
     }
     private func selectedReports(_ report: String) {

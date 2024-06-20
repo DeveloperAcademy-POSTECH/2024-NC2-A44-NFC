@@ -49,10 +49,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         }
 }
 
-extension Notification.Name {
-    static let handleOpenURL = Notification.Name("handleOpenURL")
-}
-
 class URLHandler: ObservableObject {
     @Published var selectedCategory: Category? = nil
     @Published var selectedToiletSection: String? = nil
@@ -74,17 +70,5 @@ class URLHandler: ObservableObject {
                 selectedWashbasinSection = "A"
             }
         }
-    }
-}
-
-extension URL {
-    var queryParameters: [String: String]? {
-        guard let components = URLComponents(url: self, resolvingAgainstBaseURL: false),
-              let queryItems = components.queryItems else { return nil }
-        var parameters = [String: String]()
-        for item in queryItems {
-            parameters[item.name] = item.value
-        }
-        return parameters
     }
 }
