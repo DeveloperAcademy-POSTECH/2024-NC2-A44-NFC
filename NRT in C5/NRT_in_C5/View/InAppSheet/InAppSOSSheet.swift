@@ -22,7 +22,7 @@ struct InAppSOSSheet: View {
             
             Spacer()
             Button(action: {
-                
+                makePhoneCall()
             }) {
                 Image("sosicon")
                     .resizable()
@@ -32,5 +32,13 @@ struct InAppSOSSheet: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.black)
+    }
+    
+    func makePhoneCall() {
+        let number = "01012341234"
+        if let url = URL(string: "tel://\(number)"),
+           UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }
