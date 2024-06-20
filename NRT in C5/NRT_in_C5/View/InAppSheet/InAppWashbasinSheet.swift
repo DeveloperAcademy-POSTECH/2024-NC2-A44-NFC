@@ -50,8 +50,6 @@ struct InAppWashbasinSheet: View {
                 .bold()
                 .padding(.leading, 16)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            
-            SendReportButton()
         }
     }
 }

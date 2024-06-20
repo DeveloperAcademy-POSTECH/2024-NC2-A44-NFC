@@ -157,6 +157,7 @@ struct SheetView: View {
             } else {
                 InAppSOSSheet()
             }
+            SendReportButton(selectedButton: $selectedButton, selectedToiletSection: $selectedToiletSection, selectedWashbasinSection: $selectedWashbasinSection)
         }
     }
 }

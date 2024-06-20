@@ -62,21 +62,6 @@ struct ToiletSheet: View {
                 .bold()
                 .padding(.leading, 16)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            
-            VStack {
-                Button(action: {
-                    
-                }) {
-                    Text("신고하기")
-                        .font(.system(size: 24))
-                        .bold()
-                        .foregroundColor(.white)
-                }
-            }
-            .frame(width: 361, height: 60)
-            .background(.blue)
-            .cornerRadius(6)
-            .padding(.bottom, 50)
         }
     }
     private func selectedReports(_ report: String) {
