@@ -13,7 +13,7 @@ struct MainView: View {
     @State private var selectedButton: String = ""
     @State private var selectedToiletSection: String = "A"
     @State private var selectedWashbasinSection: String = "A"
-    @State private var selectedReports: Set<String> = []
+    @State private var selectedReports: Set<String> = ["변기가 막혔어요!", "휴지가 없어요!"]
     
     var body: some View {
         ZStack {
@@ -149,17 +149,20 @@ struct SheetView: View {
     var body: some View {
         VStack {
             if selectedButton == Category.toilet.rawValue || selectedButton == Category.toiletpaper.rawValue {
-                InAppToiletSheet(selectedInAppToiletSection: selectedToiletSection)
+                InAppToiletSheet(selectedInAppToiletSection: $selectedToiletSection)
             } else if selectedButton == Category.washbasin.rawValue {
                 InAppWashbasinSheet(selectedInAppWashbasinSection: $selectedWashbasinSection)
             } else if selectedButton == Category.nfcToilet.rawValue {
-                ToiletSheet(selectedToiletSection: selectedToiletSection)
+                ToiletSheet(selectedToiletSection: $selectedToiletSection)
             } else if selectedButton == Category.nfcWashbasin.rawValue {
                 WashbasinSheet(selectedWashbasinSection: $selectedWashbasinSection)
             } else {
                 InAppSOSSheet()
             }
-            SendReportButton(selectedButton: $selectedButton, selectedToiletSection: $selectedToiletSection, selectedWashbasinSection: $selectedWashbasinSection, selectedReports: $selectedReports)
+            
+            if selectedButton != Category.sos.rawValue {
+                SendReportButton(selectedButton: $selectedButton, selectedToiletSection: $selectedToiletSection, selectedWashbasinSection: $selectedWashbasinSection, selectedReports: $selectedReports)
+            }
         }
     }
 }

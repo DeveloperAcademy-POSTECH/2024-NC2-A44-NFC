@@ -45,19 +45,25 @@ struct MessageComposeView: UIViewControllerRepresentable {
     
     func makeUIViewController(context: Context) -> MFMessageComposeViewController {
         let composeViewController = MFMessageComposeViewController()
+        var bodyText: String
+        
         composeViewController.messageComposeDelegate = context.coordinator
         composeViewController.recipients = ["jelly09@postech.ac.kr"]
+        
         if selectedButton == "toilet" {
-            composeViewController.body = "🚽 5층 여자화장실 변기 \(selectedToiletSection)칸 막혔어요!"
+            bodyText = "🚽 5층 여자화장실 변기 \(selectedToiletSection)칸 막혔어요!"
         } else if selectedButton == "washbasin" || selectedButton == "nfcWashbasin" {
-            composeViewController.body = "🧼 세면대 \(selectedWashbasinSection)칸 막혔어요!"
-        } else if selectedButton == "toiletpaper"  {
-            composeViewController.body = "🧻 5층 여자화장실 변기 \(selectedToiletSection)칸 휴지가 없어요!"
-        } else if selectedButton == "nfcToilet"  {
-            composeViewController.body = "🧻 5층 여자화장실 변기 \(selectedToiletSection)칸 \(selectedReports)"
+            bodyText = "🧼 5층 여자화장실 세면대 \(selectedWashbasinSection)칸 막혔어요!"
+        } else if selectedButton == "toiletpaper" {
+            bodyText = "🧻 5층 여자화장실 변기 \(selectedToiletSection)칸 휴지가 없어요!"
+        } else if selectedButton == "nfcToilet" {
+            let reports = selectedReports.joined(separator: ", ")
+            bodyText = "🧻 5층 여자화장실 변기 \(selectedToiletSection)칸 \(reports)"
         } else {
-            composeViewController.body = "‼️ 5층 여자화장실 도움이 필요해요!"
+            bodyText = "‼️ 5층 여자화장실 도움이 필요해요!"
         }
+        
+        composeViewController.body = bodyText
         return composeViewController
     }
     

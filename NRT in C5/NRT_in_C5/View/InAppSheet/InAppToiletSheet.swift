@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InAppToiletSheet: View {
-    @State var selectedInAppToiletSection: String = "A"
+    @Binding var selectedInAppToiletSection: String
     
     var body: some View {
         VStack {

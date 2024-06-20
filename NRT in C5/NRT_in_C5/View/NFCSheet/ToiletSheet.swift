@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ToiletSheet: View {
-    @State var selectedToiletSection: String = "A"
+    @Binding var selectedToiletSection: String
     @State var selectedReports: Set<String> = []
     
     var body: some View {
