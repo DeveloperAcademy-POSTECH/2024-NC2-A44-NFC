@@ -11,26 +11,32 @@ struct MainView: View {
     @EnvironmentObject var reportData: ReportData
     @EnvironmentObject var urlHandler: URLHandler
     @State private var isSheetPresented: Bool = false
+    @State private var isAdminViewPresented: Bool = false
     
     var body: some View {
-        ZStack {
-            VStack {
-                HeaderView()
+        NavigationStack {
+            ZStack {
+                VStack {
+                    HeaderView()
+                    
+                    ButtonsView(isSheetPresented: $isSheetPresented)
+                        .padding(.bottom, 50)
+                    
+                    AdminButton(isAdminViewPresented: $isAdminViewPresented)
+                }
+                .blur(radius: isSheetPresented ? 12 : 0)
                 
-                ButtonsView(isSheetPresented: $isSheetPresented)
-                    .padding(.bottom, 50)
-                
-                AdminButton()
+                if isSheetPresented {
+                    Rectangle()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(.black)
+                        .opacity(0.3)
+                        .padding(.top, -60)
+                        .padding(.bottom, -60)
+                }
             }
-            .blur(radius: isSheetPresented ? 12 : 0)
-            
-            if isSheetPresented {
-                Rectangle()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(.black)
-                    .opacity(0.3)
-                    .padding(.top, -60)
-                    .padding(.bottom, -60)
+            .navigationDestination(isPresented: $isAdminViewPresented) {
+                AdminCodeView()
             }
         }
         .frame(maxHeight: .infinity)
@@ -70,8 +76,12 @@ struct HeaderView: View {
 }
 
 struct AdminButton: View {
+    @Binding var isAdminViewPresented: Bool
+    
     var body: some View {
-        Button(action: {}) {
+        Button(action: {
+            isAdminViewPresented = true
+        }) {
             Image(systemName: "person.badge.key")
                 .resizable()
                 .frame(width: 24, height: 24)

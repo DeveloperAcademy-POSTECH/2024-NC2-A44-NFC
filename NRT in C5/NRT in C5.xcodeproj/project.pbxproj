@@ -29,6 +29,8 @@
 		840E4B702C23FCF900B06B20 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B6F2C23FCF900B06B20 /* Notification+Extensions.swift */; };
 		840E4B732C316B9700B06B20 /* URLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B722C316B9700B06B20 /* URLHandler.swift */; };
 		840E4B752C316EE400B06B20 /* ReportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B742C316EE400B06B20 /* ReportData.swift */; };
+		840E4B7C2C31933100B06B20 /* AdminCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B7B2C31933100B06B20 /* AdminCodeView.swift */; };
+		840E4B7E2C319D3A00B06B20 /* AdminReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B7D2C319D3A00B06B20 /* AdminReportView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		840E4B6F2C23FCF900B06B20 /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
 		840E4B722C316B9700B06B20 /* URLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHandler.swift; sourceTree = "<group>"; };
 		840E4B742C316EE400B06B20 /* ReportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportData.swift; sourceTree = "<group>"; };
+		840E4B7B2C31933100B06B20 /* AdminCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCodeView.swift; sourceTree = "<group>"; };
+		840E4B7D2C319D3A00B06B20 /* AdminReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminReportView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				840E4B4C2C20A20500B06B20 /* MainView.swift */,
+				840E4B782C3189B500B06B20 /* Admin */,
 				840E4B582C22E9E000B06B20 /* InAppSheet */,
 				840E4B572C22E9C400B06B20 /* NFCSheet */,
 			);
@@ -238,6 +243,15 @@
 				840E4B742C316EE400B06B20 /* ReportData.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		840E4B782C3189B500B06B20 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				840E4B7B2C31933100B06B20 /* AdminCodeView.swift */,
+				840E4B7D2C319D3A00B06B20 /* AdminReportView.swift */,
+			);
+			path = Admin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +387,7 @@
 				840E4B5E2C22F41400B06B20 /* NFCWrite.swift in Sources */,
 				840E4B702C23FCF900B06B20 /* Notification+Extensions.swift in Sources */,
 				840E4B602C22F67800B06B20 /* SendReportButton.swift in Sources */,
+				840E4B7C2C31933100B06B20 /* AdminCodeView.swift in Sources */,
 				840E4B522C21B59B00B06B20 /* WashbasinSheet.swift in Sources */,
 				840E4B232C208C6000B06B20 /* ContentView.swift in Sources */,
 				840E4B4D2C20A20500B06B20 /* MainView.swift in Sources */,
@@ -380,6 +395,7 @@
 				840E4B692C234B9500B06B20 /* InAppWashbasinSheet.swift in Sources */,
 				840E4B752C316EE400B06B20 /* ReportData.swift in Sources */,
 				840E4B6B2C2355CE00B06B20 /* InAppSOSSheet.swift in Sources */,
+				840E4B7E2C319D3A00B06B20 /* AdminReportView.swift in Sources */,
 				840E4B252C208C6000B06B20 /* Item.swift in Sources */,
 				840E4B5C2C22EB8F00B06B20 /* NFCReadAndWrite.swift in Sources */,
 				840E4B212C208C6000B06B20 /* NRT_in_C5App.swift in Sources */,
