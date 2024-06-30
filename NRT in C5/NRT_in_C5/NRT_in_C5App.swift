@@ -12,6 +12,7 @@ import SwiftData
 struct NRT_in_C5App: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var urlHandler = URLHandler()
+    @StateObject var reportData = ReportData()
     
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -29,6 +30,7 @@ struct NRT_in_C5App: App {
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(reportData)
                 .environmentObject(urlHandler)
                 .onOpenURL { url in
                     urlHandler.handle(url: url)
@@ -47,28 +49,4 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             NotificationCenter.default.post(name: .handleOpenURL, object: url)
             return true
         }
-}
-
-class URLHandler: ObservableObject {
-    @Published var selectedCategory: Category? = nil
-    @Published var selectedToiletSection: String? = nil
-    @Published var selectedWashbasinSection: String? = nil
-    
-    func handle(url: URL) {
-        if url.host == "toilet" {
-            selectedCategory = .nfcToilet
-            if let section = url.queryParameters?["section"] {
-                selectedToiletSection = section
-            } else {
-                selectedToiletSection = "A"
-            }
-        } else if url.host == "washbasin" {
-            selectedCategory = .nfcWashbasin
-            if let section = url.queryParameters?["section"] {
-                selectedWashbasinSection = section
-            } else {
-                selectedWashbasinSection = "A"
-            }
-        }
-    }
 }

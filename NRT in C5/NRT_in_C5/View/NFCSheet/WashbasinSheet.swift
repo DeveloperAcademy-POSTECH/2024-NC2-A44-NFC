@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct WashbasinSheet: View {
-    @Binding var selectedWashbasinSection: String
+    @EnvironmentObject var reportData: ReportData
     
     var body: some View {
         VStack {
-            Text("5층 여자화장실 \(selectedWashbasinSection)세면대")
+            Text("5층 여자화장실 \(reportData.selectedWashbasinSection)세면대")
                 .font(.system(size: 28))
                 .bold()
                 .padding(.leading, 16)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 50)
             
-            Image("washbasin_\(selectedWashbasinSection)")
+            Image("washbasin_\(reportData.selectedWashbasinSection)")
                 .resizable()
                 .frame(width: 329, height: 109)
             

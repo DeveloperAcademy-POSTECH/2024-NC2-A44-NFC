@@ -8,19 +8,16 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var reportData: ReportData
     @EnvironmentObject var urlHandler: URLHandler
     @State private var isSheetPresented: Bool = false
-    @State private var selectedButton: String = ""
-    @State private var selectedToiletSection: String = "A"
-    @State private var selectedWashbasinSection: String = "A"
-    @State private var selectedReports: Set<String> = ["변기가 막혔어요!", "휴지가 없어요!"]
     
     var body: some View {
         ZStack {
             VStack {
                 HeaderView()
                 
-                ButtonsView(isSheetPresented: $isSheetPresented, selectedButton: $selectedButton)
+                ButtonsView(isSheetPresented: $isSheetPresented)
                     .padding(.bottom, 50)
                 
                 AdminButton()
@@ -39,19 +36,20 @@ struct MainView: View {
         .frame(maxHeight: .infinity)
         .onChange(of: urlHandler.selectedCategory) { category in
             if let category = category {
-                selectedButton = category.rawValue
+                reportData.selectedButton = category.rawValue
                 if let section = urlHandler.selectedToiletSection {
-                    selectedToiletSection = section
+                    reportData.selectedToiletSection = section
                 } else if let section = urlHandler.selectedWashbasinSection {
-                    selectedWashbasinSection = section
+                    reportData.selectedWashbasinSection = section
                 }
                 isSheetPresented = true
                 urlHandler.selectedCategory = nil
             }
         }
         .sheet(isPresented: $isSheetPresented) {
-            SheetView(isSheetPresented: $isSheetPresented, selectedButton: $selectedButton, selectedToiletSection: $selectedToiletSection, selectedWashbasinSection: $selectedWashbasinSection, selectedReports: $selectedReports)
-                .presentationDetents(selectedButton == "sos" ? [.large] : selectedButton == "nfcToilet" ? [.height(519)] : [.medium])
+            SheetView(isSheetPresented: $isSheetPresented)
+                .environmentObject(reportData)
+                .presentationDetents(reportData.selectedButton == "sos" ? [.large] : reportData.selectedButton == "nfcToilet" ? [.height(519)] : [.medium])
         }
     }
 }
@@ -85,6 +83,9 @@ struct AdminButton: View {
 }
 
 struct ButtonsView: View {
+    @EnvironmentObject var reportData: ReportData
+    @Binding var isSheetPresented: Bool
+    
     let reportButtons = [
         "washbasin" : "세면대가\n막혔어요!",
         "toilet" : "변기가\n막혔어요!",
@@ -94,15 +95,12 @@ struct ButtonsView: View {
     
     let columns = [ GridItem(.flexible()), GridItem(.flexible()) ]
     
-    @Binding var isSheetPresented: Bool
-    @Binding var selectedButton: String
-    
     var body: some View {
         LazyVGrid(columns: columns, spacing: 16) {
             ForEach(Category.allCases, id: \.self) { category in
                 if let title = reportButtons[category.rawValue] {
                     ReportButton(title: title, category: category, action: {
-                        selectedButton = category.rawValue
+                        reportData.selectedButton = category.rawValue
                         isSheetPresented = true
                     })
                 }
@@ -141,28 +139,28 @@ struct ReportButton: View {
 }
 
 struct SheetView: View {
+    @EnvironmentObject var reportData: ReportData
     @Binding var isSheetPresented: Bool
-    @Binding var selectedButton: String
-    @Binding var selectedToiletSection: String
-    @Binding var selectedWashbasinSection: String
-    @Binding var selectedReports: Set<String>
     
     var body: some View {
         VStack {
-            if selectedButton == Category.toilet.rawValue || selectedButton == Category.toiletpaper.rawValue {
-                InAppToiletSheet(selectedInAppToiletSection: $selectedToiletSection)
-            } else if selectedButton == Category.washbasin.rawValue {
-                InAppWashbasinSheet(selectedInAppWashbasinSection: $selectedWashbasinSection)
-            } else if selectedButton == Category.nfcToilet.rawValue {
-                ToiletSheet(selectedToiletSection: $selectedToiletSection)
-            } else if selectedButton == Category.nfcWashbasin.rawValue {
-                WashbasinSheet(selectedWashbasinSection: $selectedWashbasinSection)
-            } else {
+            switch reportData.selectedButton {
+            case Category.toilet.rawValue, Category.toiletpaper.rawValue:
+                InAppToiletSheet()
+            case Category.washbasin.rawValue:
+                InAppWashbasinSheet()
+            case Category.nfcToilet.rawValue:
+                ToiletSheet()
+            case Category.nfcWashbasin.rawValue:
+                WashbasinSheet()
+            case Category.sos.rawValue:
                 InAppSOSSheet()
+            default:
+                MainView()
             }
             
-            if selectedButton != Category.sos.rawValue {
-                SendReportButton(selectedButton: $selectedButton, selectedToiletSection: $selectedToiletSection, selectedWashbasinSection: $selectedWashbasinSection, selectedReports: $selectedReports)
+            if reportData.selectedButton != Category.sos.rawValue {
+                SendReportButton()
             }
         }
     }
