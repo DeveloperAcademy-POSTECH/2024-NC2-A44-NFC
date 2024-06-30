@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InAppWashbasinSheet: View {
-    @Binding var selectedInAppWashbasinSection: String
+    @EnvironmentObject var reportData: ReportData
     
     var body: some View {
         VStack {
@@ -19,26 +19,26 @@ struct InAppWashbasinSheet: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 50)
             
-            Image("washbasin_\(selectedInAppWashbasinSection)")
+            Image("washbasin_\(reportData.selectedWashbasinSection)")
                 .resizable()
                 .frame(width: 329, height: 109)
             
             HStack {
                 ForEach(WashbasinSection.allCases, id: \.self) { item in
                     Button(action: {
-                        selectedInAppWashbasinSection = item.rawValue
+                        reportData.selectedWashbasinSection = item.rawValue
                     }) {
                         Text("\(item)")
                             .font(.system(size: 24))
                             .bold()
                             .foregroundColor(
-                                selectedInAppWashbasinSection != item.rawValue ? .gray : .blue
+                                reportData.selectedWashbasinSection != item.rawValue ? .gray : .blue
                             )
                     }
                     .frame(width: 172, height: 60)
                     .cornerRadius(6)
                     .border(
-                        selectedInAppWashbasinSection != item.rawValue ? .gray : .blue
+                        reportData.selectedWashbasinSection != item.rawValue ? .gray : .blue
                     )
                 }
                 .padding(.top, 10)

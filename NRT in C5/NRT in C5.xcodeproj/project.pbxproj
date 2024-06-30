@@ -27,6 +27,8 @@
 		840E4B6B2C2355CE00B06B20 /* InAppSOSSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B6A2C2355CE00B06B20 /* InAppSOSSheet.swift */; };
 		840E4B6E2C23FCAA00B06B20 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B6D2C23FCAA00B06B20 /* URL+Extensions.swift */; };
 		840E4B702C23FCF900B06B20 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B6F2C23FCF900B06B20 /* Notification+Extensions.swift */; };
+		840E4B732C316B9700B06B20 /* URLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B722C316B9700B06B20 /* URLHandler.swift */; };
+		840E4B752C316EE400B06B20 /* ReportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B742C316EE400B06B20 /* ReportData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		840E4B6A2C2355CE00B06B20 /* InAppSOSSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppSOSSheet.swift; sourceTree = "<group>"; };
 		840E4B6D2C23FCAA00B06B20 /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		840E4B6F2C23FCF900B06B20 /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
+		840E4B722C316B9700B06B20 /* URLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHandler.swift; sourceTree = "<group>"; };
+		840E4B742C316EE400B06B20 /* ReportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 				840E4B202C208C6000B06B20 /* NRT_in_C5App.swift */,
 				840E4B222C208C6000B06B20 /* ContentView.swift */,
 				840E4B242C208C6000B06B20 /* Item.swift */,
+				840E4B712C316B4F00B06B20 /* Data */,
 				840E4B6C2C23FC8100B06B20 /* Extensions */,
 				840E4B632C232E5800B06B20 /* Enums */,
 				840E4B622C2309BA00B06B20 /* NFC */,
@@ -224,6 +229,15 @@
 				840E4B6F2C23FCF900B06B20 /* Notification+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		840E4B712C316B4F00B06B20 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				840E4B722C316B9700B06B20 /* URLHandler.swift */,
+				840E4B742C316EE400B06B20 /* ReportData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,10 +378,12 @@
 				840E4B4D2C20A20500B06B20 /* MainView.swift in Sources */,
 				840E4B6E2C23FCAA00B06B20 /* URL+Extensions.swift in Sources */,
 				840E4B692C234B9500B06B20 /* InAppWashbasinSheet.swift in Sources */,
+				840E4B752C316EE400B06B20 /* ReportData.swift in Sources */,
 				840E4B6B2C2355CE00B06B20 /* InAppSOSSheet.swift in Sources */,
 				840E4B252C208C6000B06B20 /* Item.swift in Sources */,
 				840E4B5C2C22EB8F00B06B20 /* NFCReadAndWrite.swift in Sources */,
 				840E4B212C208C6000B06B20 /* NRT_in_C5App.swift in Sources */,
+				840E4B732C316B9700B06B20 /* URLHandler.swift in Sources */,
 				840E4B502C21A16100B06B20 /* ToiletSheet.swift in Sources */,
 				840E4B5A2C22EA2000B06B20 /* InAppToiletSheet.swift in Sources */,
 				840E4B652C232E6B00B06B20 /* Enums.swift in Sources */,

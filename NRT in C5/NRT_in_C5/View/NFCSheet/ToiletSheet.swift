@@ -8,19 +8,18 @@
 import SwiftUI
 
 struct ToiletSheet: View {
-    @Binding var selectedToiletSection: String
-    @State var selectedReports: Set<String> = []
+    @EnvironmentObject var reportData: ReportData
     
     var body: some View {
         VStack {
-            Text("5층 여자화장실 \(selectedToiletSection)칸")
+            Text("5층 여자화장실 \(reportData.selectedToiletSection)칸")
                 .font(.system(size: 28))
                 .bold()
                 .padding(.leading, 16)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 50)
             
-            Image("toilet_\(selectedToiletSection)")
+            Image("toilet_\(reportData.selectedToiletSection)")
                 .resizable()
                 .frame(width: 329, height: 109)
                 .padding(.bottom, 20)
@@ -39,18 +38,18 @@ struct ToiletSheet: View {
             HStack {
                 ForEach(ReportType.allCases, id: \.self) { report in
                     Button(action: {
-                        selectedReports(report.rawValue)
+                        reportData.toggleReport(report.rawValue)
                     }) {
                         Text("\(report.rawValue)")
                             .font(.system(size: 16))
                             .bold()
                             .foregroundColor(
-                                selectedReports.contains(report.rawValue) ? .blue : .gray
+                                reportData.selectedReports.contains(report.rawValue) ? .blue : .gray
                             )
                     }
                     .frame(width: 172, height: 60)
                     .border(
-                        selectedReports.contains(report.rawValue) ? .blue : .gray
+                        reportData.selectedReports.contains(report.rawValue) ? .blue : .gray
                     )
                 }
                 .padding(.top, 10)
@@ -62,13 +61,6 @@ struct ToiletSheet: View {
                 .foregroundStyle(.gray)
                 .padding(.leading, 16)
                 .frame(maxWidth: .infinity, alignment: .leading)
-        }
-    }
-    private func selectedReports(_ report: String) {
-        if selectedReports.contains(report) {
-            selectedReports.remove(report)
-        } else {
-            selectedReports.insert(report)
         }
     }
 }

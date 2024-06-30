@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InAppToiletSheet: View {
-    @Binding var selectedInAppToiletSection: String
+    @EnvironmentObject var reportData: ReportData
     
     var body: some View {
         VStack {
@@ -19,25 +19,25 @@ struct InAppToiletSheet: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 50)
             
-            Image("toilet_\(selectedInAppToiletSection)")
+            Image("toilet_\(reportData.selectedToiletSection)")
                 .resizable()
                 .frame(width: 329, height: 109)
             
             HStack {
                 ForEach(ToiletSection.allCases, id: \.self) { item in
                     Button(action: {
-                        selectedInAppToiletSection = "\(item)"
+                        reportData.selectedToiletSection = "\(item)"
                     }) {
                         Text("\(item)")
                             .font(.system(size: 24))
                             .bold()
                             .foregroundColor(
-                                selectedInAppToiletSection != "\(item)" ? .gray : .blue
+                                reportData.selectedToiletSection != "\(item)" ? .gray : .blue
                             )
                     }
                     .frame(width: 109, height: 80)
                     .border(
-                        selectedInAppToiletSection != "\(item)" ? .gray : .blue
+                        reportData.selectedToiletSection != "\(item)" ? .gray : .blue
                     )
                 }
                 .padding(.top, 10)
