@@ -43,11 +43,23 @@ struct MainView: View {
         .onChange(of: urlHandler.selectedCategory) { category in
             if let category = category {
                 reportData.selectedButton = category.rawValue
+                
                 if let section = urlHandler.selectedToiletSection {
                     reportData.selectedToiletSection = section
-                } else if let section = urlHandler.selectedWashbasinSection {
+                }
+                
+                if let section = urlHandler.selectedWashbasinSection {
                     reportData.selectedWashbasinSection = section
                 }
+                
+                if let gender = urlHandler.selectedGender {
+                    reportData.selectedGender = gender
+                }
+                
+                if let floor = urlHandler.selectedFloor {
+                    reportData.selectedFloor = floor
+                }
+                
                 isSheetPresented = true
                 urlHandler.selectedCategory = nil
             }

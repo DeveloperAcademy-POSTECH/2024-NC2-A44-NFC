@@ -12,7 +12,7 @@ struct ToiletSheet: View {
     
     var body: some View {
         VStack {
-            Text("5층 여자화장실 \(reportData.selectedToiletSection)칸")
+            Text("\(reportData.selectedFloor)층 \(reportData.selectedGender == "male" ? "남자" : "여자")화장실 \(reportData.selectedToiletSection)칸")
                 .font(.system(size: 28))
                 .bold()
                 .padding(.leading, 16)

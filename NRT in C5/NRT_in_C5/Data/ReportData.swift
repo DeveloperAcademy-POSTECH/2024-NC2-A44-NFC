@@ -12,6 +12,8 @@ class ReportData: ObservableObject {
     @Published var selectedToiletSection: String = "A"
     @Published var selectedWashbasinSection: String = "A"
     @Published var selectedReports: Set<String> = [""]
+    @Published var selectedGender: String = ""
+    @Published var selectedFloor: String = ""
     
     func toggleReport(_ report: String) {
         if selectedReports.contains(report) {
