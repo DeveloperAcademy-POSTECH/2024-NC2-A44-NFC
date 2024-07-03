@@ -11,7 +11,10 @@
 <br>
 
 # 🎥 Youtube Link
-(추후 만들어진 유튜브 링크 추가)
+
+[NFC Youtube Link](https://youtu.be/b6Z5Mbxux8s?si=aBgBpBk-s_7Bbva3)
+
+<br>
 
 # 💡 About NFC
 <img src="https://github.com/jelly12paw/2024-NC2-A44-NFC/assets/107910587/c44bf30e-f8d4-44e0-ab65-19ae8e7d17fe" width="1000">
