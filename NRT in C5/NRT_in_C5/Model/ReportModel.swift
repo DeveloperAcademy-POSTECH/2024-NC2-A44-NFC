@@ -10,16 +10,16 @@ import SwiftData
 
 @Model
 final class ReportModel {
-    var id: UUID
+    @Attribute(.unique) var id: UUID
     var date: Date
-    var category: Category
+    var category: String
     var toiletSection: String = ""
     var washbasinSection: String = ""
     var reports: Set<String> = [""]
     var gender: String = ""
     var floor: String = ""
     
-    init(id: UUID, date: Date, category: Category, toiletSection: String, washbasinSection: String, reports: Set<String>, gender: String, floor: String) {
+    init(id: UUID, date: Date, category: String, toiletSection: String, washbasinSection: String, reports: Set<String>, gender: String, floor: String) {
         self.id = id
         self.date = date
         self.category = category
