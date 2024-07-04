@@ -31,6 +31,7 @@
 		840E4B752C316EE400B06B20 /* ReportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B742C316EE400B06B20 /* ReportData.swift */; };
 		840E4B7C2C31933100B06B20 /* AdminCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B7B2C31933100B06B20 /* AdminCodeView.swift */; };
 		840E4B7E2C319D3A00B06B20 /* AdminReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B7D2C319D3A00B06B20 /* AdminReportView.swift */; };
+		840E4B812C36F24000B06B20 /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B802C36F24000B06B20 /* ReportModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		840E4B742C316EE400B06B20 /* ReportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportData.swift; sourceTree = "<group>"; };
 		840E4B7B2C31933100B06B20 /* AdminCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCodeView.swift; sourceTree = "<group>"; };
 		840E4B7D2C319D3A00B06B20 /* AdminReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminReportView.swift; sourceTree = "<group>"; };
+		840E4B802C36F24000B06B20 /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				840E4B202C208C6000B06B20 /* NRT_in_C5App.swift */,
 				840E4B222C208C6000B06B20 /* ContentView.swift */,
 				840E4B242C208C6000B06B20 /* Item.swift */,
+				840E4B7F2C36F20E00B06B20 /* Model */,
 				840E4B712C316B4F00B06B20 /* Data */,
 				840E4B6C2C23FC8100B06B20 /* Extensions */,
 				840E4B632C232E5800B06B20 /* Enums */,
@@ -252,6 +255,14 @@
 				840E4B7D2C319D3A00B06B20 /* AdminReportView.swift */,
 			);
 			path = Admin;
+			sourceTree = "<group>";
+		};
+		840E4B7F2C36F20E00B06B20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				840E4B802C36F24000B06B20 /* ReportModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,6 +412,7 @@
 				840E4B212C208C6000B06B20 /* NRT_in_C5App.swift in Sources */,
 				840E4B732C316B9700B06B20 /* URLHandler.swift in Sources */,
 				840E4B502C21A16100B06B20 /* ToiletSheet.swift in Sources */,
+				840E4B812C36F24000B06B20 /* ReportModel.swift in Sources */,
 				840E4B5A2C22EA2000B06B20 /* InAppToiletSheet.swift in Sources */,
 				840E4B652C232E6B00B06B20 /* Enums.swift in Sources */,
 			);
