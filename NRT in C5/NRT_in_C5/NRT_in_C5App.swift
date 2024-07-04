@@ -16,7 +16,7 @@ struct NRT_in_C5App: App {
     
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            ReportModel.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         

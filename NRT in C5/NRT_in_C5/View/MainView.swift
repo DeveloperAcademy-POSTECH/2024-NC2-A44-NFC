@@ -11,37 +11,55 @@ struct MainView: View {
     @EnvironmentObject var reportData: ReportData
     @EnvironmentObject var urlHandler: URLHandler
     @State private var isSheetPresented: Bool = false
+    @State private var isAdminViewPresented: Bool = false
     
     var body: some View {
-        ZStack {
-            VStack {
-                HeaderView()
+        NavigationStack {
+            ZStack {
+                VStack {
+                    HeaderView()
+                    
+                    ButtonsView(isSheetPresented: $isSheetPresented)
+                        .padding(.bottom, 50)
+                    
+                    AdminButton(isAdminViewPresented: $isAdminViewPresented)
+                }
+                .blur(radius: isSheetPresented ? 12 : 0)
                 
-                ButtonsView(isSheetPresented: $isSheetPresented)
-                    .padding(.bottom, 50)
-                
-                AdminButton()
+                if isSheetPresented {
+                    Rectangle()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(.black)
+                        .opacity(0.3)
+                        .padding(.top, -60)
+                        .padding(.bottom, -60)
+                }
             }
-            .blur(radius: isSheetPresented ? 12 : 0)
-            
-            if isSheetPresented {
-                Rectangle()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(.black)
-                    .opacity(0.3)
-                    .padding(.top, -60)
-                    .padding(.bottom, -60)
+            .navigationDestination(isPresented: $isAdminViewPresented) {
+                AdminCodeView()
             }
         }
         .frame(maxHeight: .infinity)
         .onChange(of: urlHandler.selectedCategory) { category in
             if let category = category {
                 reportData.selectedButton = category.rawValue
+                
                 if let section = urlHandler.selectedToiletSection {
                     reportData.selectedToiletSection = section
-                } else if let section = urlHandler.selectedWashbasinSection {
+                }
+                
+                if let section = urlHandler.selectedWashbasinSection {
                     reportData.selectedWashbasinSection = section
                 }
+                
+                if let gender = urlHandler.selectedGender {
+                    reportData.selectedGender = gender
+                }
+                
+                if let floor = urlHandler.selectedFloor {
+                    reportData.selectedFloor = floor
+                }
+                
                 isSheetPresented = true
                 urlHandler.selectedCategory = nil
             }
@@ -70,8 +88,12 @@ struct HeaderView: View {
 }
 
 struct AdminButton: View {
+    @Binding var isAdminViewPresented: Bool
+    
     var body: some View {
-        Button(action: {}) {
+        Button(action: {
+            isAdminViewPresented = true
+        }) {
             Image(systemName: "person.badge.key")
                 .resizable()
                 .frame(width: 24, height: 24)

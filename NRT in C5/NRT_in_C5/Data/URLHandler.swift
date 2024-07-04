@@ -11,33 +11,39 @@ class URLHandler: ObservableObject {
     @Published var selectedCategory: Category? = nil
     @Published var selectedToiletSection: String? = nil
     @Published var selectedWashbasinSection: String? = nil
+    @Published var selectedGender: String? = nil
+    @Published var selectedFloor: String? = nil
     
     var reportData: ReportData?
     
     func handle(url: URL) {
-        if url.host == "toilet" {
+        let parameters = url.extractQueryParameters()
+        
+        switch url.host {
+        case "toilet":
             selectedCategory = .nfcToilet
-            if let section = url.queryParameters?["section"] {
-                selectedToiletSection = section
-            } else {
-                selectedToiletSection = "A"
-            }
+            selectedToiletSection = parameters["section"] ?? "A"
+            selectedGender = parameters["gender"] ?? "male"
+            selectedFloor = parameters["floor"] ?? "7"
             
             reportData?.selectedButton = Category.nfcToilet.rawValue
             reportData?.selectedToiletSection = selectedToiletSection ?? "A"
+            reportData?.selectedGender = selectedGender ?? "male"
+            reportData?.selectedFloor = selectedFloor ?? "7"
             
-        } else if url.host == "washbasin" {
+        case "washbasin":
             selectedCategory = .nfcWashbasin
-            if let section = url.queryParameters?["section"] {
-                selectedWashbasinSection = section
-            } else {
-                selectedWashbasinSection = "A"
-            }
+            selectedWashbasinSection = parameters["section"] ?? "A"
+            selectedGender = parameters["gender"] ?? "male"
+            selectedFloor = parameters["floor"] ?? "7"
             
             reportData?.selectedButton = Category.nfcWashbasin.rawValue
             reportData?.selectedWashbasinSection = selectedWashbasinSection ?? "A"
+            reportData?.selectedGender = selectedGender ?? "male"
+            reportData?.selectedFloor = selectedFloor ?? "7"
             
+        default:
+            break
         }
     }
 }
-

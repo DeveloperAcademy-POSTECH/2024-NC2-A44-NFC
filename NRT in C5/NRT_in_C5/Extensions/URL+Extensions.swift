@@ -8,9 +8,10 @@
 import Foundation
 
 extension URL {
-    var queryParameters: [String: String]? {
+    func extractQueryParameters() -> [String: String] {
         guard let components = URLComponents(url: self, resolvingAgainstBaseURL: false),
-              let queryItems = components.queryItems else { return nil }
+              let queryItems = components.queryItems else { return [:] }
+        
         var parameters = [String: String]()
         for item in queryItems {
             parameters[item.name] = item.value
@@ -18,4 +19,3 @@ extension URL {
         return parameters
     }
 }
-
