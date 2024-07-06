@@ -17,7 +17,7 @@ struct SendReportButton: View {
         VStack {
             Button(action: {
                 isShowingMessageCompose = true
-                addReport()
+                //                addReport()
             }) {
                 Text("신고하기")
                     .font(.system(size: 24))
@@ -53,11 +53,12 @@ struct SendReportButton: View {
 struct MessageComposeView: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var reportData: ReportData
+    @Environment(\.modelContext) private var modelContext
     
     func makeUIViewController(context: Context) -> MFMessageComposeViewController {
         let composeViewController = MFMessageComposeViewController()
         composeViewController.messageComposeDelegate = context.coordinator
-        composeViewController.recipients = ["haepark24@pos.idserve.net"]
+        composeViewController.recipients = ["01033429343"]
         
         var bodyText: String
         
@@ -100,10 +101,7 @@ struct MessageComposeView: UIViewControllerRepresentable {
             case .cancelled:
                 print("Cancelled")
             case .sent:
-                if let body = controller.body {
-                    print("Sent message:", body)
-                    saveReport(bodyText: body)
-                }
+                print("Sent message:", controller.body ?? "")
             case .failed:
                 print("Failed")
             @unknown default:
@@ -112,7 +110,7 @@ struct MessageComposeView: UIViewControllerRepresentable {
             parent.presentationMode.wrappedValue.dismiss()
         }
         
-        private func saveReport(bodyText: String) {
+        private func saveReport() {
             let newReport = ReportModel(
                 id: UUID(),
                 date: Date(),
