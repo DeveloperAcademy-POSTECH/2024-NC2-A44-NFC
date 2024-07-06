@@ -30,6 +30,7 @@
 		840E4B7C2C31933100B06B20 /* AdminCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B7B2C31933100B06B20 /* AdminCodeView.swift */; };
 		840E4B7E2C319D3A00B06B20 /* AdminReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B7D2C319D3A00B06B20 /* AdminReportView.swift */; };
 		840E4B812C36F24000B06B20 /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B802C36F24000B06B20 /* ReportModel.swift */; };
+		840E4B852C3704B400B06B20 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E4B842C3704B400B06B20 /* Date+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		840E4B7B2C31933100B06B20 /* AdminCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCodeView.swift; sourceTree = "<group>"; };
 		840E4B7D2C319D3A00B06B20 /* AdminReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminReportView.swift; sourceTree = "<group>"; };
 		840E4B802C36F24000B06B20 /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
+		840E4B842C3704B400B06B20 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 			children = (
 				840E4B6D2C23FCAA00B06B20 /* URL+Extensions.swift */,
 				840E4B6F2C23FCF900B06B20 /* Notification+Extensions.swift */,
+				840E4B842C3704B400B06B20 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				840E4B6E2C23FCAA00B06B20 /* URL+Extensions.swift in Sources */,
 				840E4B692C234B9500B06B20 /* InAppWashbasinSheet.swift in Sources */,
 				840E4B752C316EE400B06B20 /* ReportData.swift in Sources */,
+				840E4B852C3704B400B06B20 /* Date+Extensions.swift in Sources */,
 				840E4B6B2C2355CE00B06B20 /* InAppSOSSheet.swift in Sources */,
 				840E4B7E2C319D3A00B06B20 /* AdminReportView.swift in Sources */,
 				840E4B5C2C22EB8F00B06B20 /* NFCReadAndWrite.swift in Sources */,

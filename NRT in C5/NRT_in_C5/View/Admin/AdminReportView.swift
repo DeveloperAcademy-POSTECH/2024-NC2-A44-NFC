@@ -20,7 +20,7 @@ struct AdminReportView: View {
                 List(reports, id: \.id) { report in
                     VStack(alignment: .leading) {
                         Text("Category: \(report.category)")
-                        Text("Date: \(report.date, formatter: dateFormatter)")
+                        Text("Date: \(report.date.toString(by: "YYYY년 M월 d일 HH:MM"))")
                         Text("Toilet Section: \(report.toiletSection)")
                         Text("Washbasin Section: \(report.washbasinSection)")
                         Text("Gender: \(report.gender)")
@@ -30,12 +30,5 @@ struct AdminReportView: View {
                 }
             }
         }
-    }
-
-    private var dateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        return formatter
     }
 }
